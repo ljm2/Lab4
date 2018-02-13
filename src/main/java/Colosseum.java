@@ -75,7 +75,7 @@ public class Colosseum {
         Pokemon tempPokemon = new Pokemon();
         System.out.println("Please name your Pokemon.");
         System.out.println("Name:");
-        tempPokemon.name = myScan.nextLine();
+        tempPokemon.name = myScan.next();
 
         System.out.println("How many hit points will it have? (1-50)");
         System.out.println("Hit points:");
@@ -88,7 +88,7 @@ public class Colosseum {
         } while (tempPokemon.hitPoints > MAX_HIT_POINTS || tempPokemon.hitPoints <= 0);
 
         /*
-        DID THIS FIRST FOR EVERY LOOP BUT THAT DOESN'T LOOK GOOD AND ASKS FOR INPUT TWICE
+        DID THIS FIRST FOR EVERY LO  BUT THAT DOESN'T LOOK GOOD AND ASKS FOR INPUT TWICE
         int tempA = myScan.nextInt();
         while (tempA > MAX_HIT_POINTS || tempA <= 0) {
             System.out.println("Sorry. Hit points must be between 1 and 50. Try again:");
@@ -153,9 +153,9 @@ public class Colosseum {
      */
     public static void determineWinner() {
         if (secondPokemon.hitPoints <= 0) {
-            System.out.println(firstPokemon.name + " is the winner!!!");
+            System.out.println(firstPokemon.name + " DESTROYED " + secondPokemon.name);
         } else if (firstPokemon.hitPoints <= 0) {
-            System.out.println(secondPokemon.name + " is the winner!!!");
+            System.out.println(secondPokemon.name + " DESTROYED " + firstPokemon.name);
         }
     }
 
@@ -168,14 +168,12 @@ public class Colosseum {
         System.out.println("Player 1, build your Pokemon!");
         System.out.println("=================");
         firstPokemon = buildPokemon();
-        firstPokemon.name = "Chuchu";
 
         System.out.println("");
 
         System.out.println("Player 2, build your Pokemon!");
         System.out.println("==================");
         secondPokemon = buildPokemon();
-        secondPokemon.name = "Xyz";
     }
 
     /**
